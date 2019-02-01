@@ -95,7 +95,7 @@ public class EmpleadosRest {
     	
     }
 	
-	@POST
+	@PUT
 	@Consumes(MediaType.APPLICATION_XML)
 	/**
 	 * Actualiza la BBDD con el contenido XML 
@@ -103,7 +103,7 @@ public class EmpleadosRest {
 	 * @param departamento
 	 * @return
 	 */
-	public Response postEmpleado(Empleados empleado) {
+	public Response putEmpleado(Empleados empleado) {
 		Session session = sesFactory.openSession();
 		Response res;
 
