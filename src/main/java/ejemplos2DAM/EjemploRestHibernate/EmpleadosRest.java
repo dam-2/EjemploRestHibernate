@@ -45,12 +45,7 @@ public class EmpleadosRest {
 	}	
 		
     @GET
-    @Path("/")
     @Produces(MediaType.APPLICATION_XML)
-    /**
-     * Devuelve una lista de empleados
-     * @return
-     */
     public List<Empleados> getEmpleados()
     {
     	Session session = sesFactory.openSession();
@@ -95,7 +90,7 @@ public class EmpleadosRest {
     	
     }
 	
-	@PUT
+	@POST
 	@Consumes(MediaType.APPLICATION_XML)
 	/**
 	 * Actualiza la BBDD con el contenido XML 
@@ -103,7 +98,7 @@ public class EmpleadosRest {
 	 * @param departamento
 	 * @return
 	 */
-	public Response putEmpleado(Empleados empleado) {
+	public Response postEmpleado(Empleados empleado) {
 		Session session = sesFactory.openSession();
 		Response res;
 
