@@ -4,6 +4,8 @@ package ejemplos2DAM.Entidades;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
+
+import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -75,6 +77,7 @@ public class Empleados implements java.io.Serializable {
 	}
 
 	@XmlTransient
+	@JsonbTransient
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "dept_no", nullable = false)
 	public Departamentos getDepartamentos() {
@@ -86,6 +89,7 @@ public class Empleados implements java.io.Serializable {
 	}
 
 	@XmlTransient
+	@JsonbTransient
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "dir")
 	public Empleados getEmpleados() {
@@ -143,6 +147,7 @@ public class Empleados implements java.io.Serializable {
 	}
 
 	@XmlTransient
+	@JsonbTransient
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "empleados")
 	public Set<Empleados> getEmpleadoses() {
 		return this.empleadoses;

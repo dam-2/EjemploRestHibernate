@@ -3,6 +3,8 @@ package ejemplos2DAM.Entidades;
 
 import java.util.HashSet;
 import java.util.Set;
+
+import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -69,6 +71,7 @@ public class Departamentos implements java.io.Serializable {
 	}
 
 	@XmlTransient
+	@JsonbTransient
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "departamentos")
 	public Set<Empleados> getEmpleadoses() {
 		return this.empleadoses;
